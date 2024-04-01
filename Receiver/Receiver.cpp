@@ -1,7 +1,7 @@
 #include <windows.h>  
 #include <iostream>    
 
-int main() {   // Основная функция программы
+int main() {  
     HANDLE fileMapping = OpenFileMapping(FILE_MAP_READ, FALSE, L"MySharedMemory");   // Открытие существующего отображенного в память файла для чтения
 
     if (!fileMapping) {   // Проверка успешности открытия файла отображенного в память
@@ -21,7 +21,7 @@ int main() {   // Основная функция программы
 
     if (!dataReadyEvent) {   // Проверка успешности открытия события
         std::cerr << "Error opening event." << std::endl;   // Вывод сообщения об ошибке
-        Sleep(30000);   // Задержка на 30 секунд
+        Sleep(3000);   // Задержка на 3 секунды
         UnmapViewOfFile(mapView);   // Отмена отображения файла в память
         CloseHandle(fileMapping);   // Закрытие отображенного в память файла
         return 1;   // Возврат кода ошибки

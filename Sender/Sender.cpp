@@ -1,7 +1,7 @@
 #include <windows.h>   
 #include <iostream>    
 
-int main() {   // Основная функция программы
+int main() {
     HANDLE fileMapping = CreateFileMapping(INVALID_HANDLE_VALUE, nullptr, PAGE_READWRITE, 0, 4096, L"MySharedMemory");   // Создание нового отображенного в память файла для записи
 
     if (!fileMapping) {   // Проверка успешности создания файла отображенного в память
